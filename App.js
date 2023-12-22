@@ -1,10 +1,12 @@
 import { StyleSheet, View } from 'react-native';
-import Header from './src/components/header/Header';
+// import Home from './src/screens/home/Home';
+import Wellcome from './src/screens/wellcome/Wellcome';
 
 export default function App() {
   return (
     <View style={styles.containerApp}>
-      <Header />
+      {/* <Home /> */}
+      <Wellcome />
     </View>
   );
 }
@@ -12,7 +14,7 @@ export default function App() {
 const styles = StyleSheet.create({
   containerApp: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#0D1F2D',
     alignItems: 'center',
     justifyContent: 'center',
   },
