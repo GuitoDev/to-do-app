@@ -1,83 +1,56 @@
 import * as React from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View, Text } from "react-native";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import IconButton from "@mui/material/IconButton";
-import Input from "@mui/material/Input";
-import InputLabel from "@mui/material/InputLabel";
-import InputAdornment from "@mui/material/InputAdornment";
-import FormControl from "@mui/material/FormControl";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import { TextInput, Button } from "react-native-paper";
 
-export default function InputAdornments() {
-  const [showPassword, setShowPassword] = React.useState(false);
-
-  const handleClickShowPassword = () => setShowPassword((show) => !show);
-
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  };
-
-  const textFieldColorImp = {
-    color: "#ffff",
-  };
+const Wellcome = () => {
+  const [text, setText] = React.useState("");
 
   return (
     <View style={styles.container}>
-      <Text style={styles.wellcome}>Bem Vindo!</Text>
-      <Text style={styles.fraseWell}>Logue para continuar</Text>
-
-      {/* Input para o email */} 
-      <Box sx={{ "& > :not(style)": { m: 1 } }}>
-        <Box
-          sx={{
-            // Não consigo alterar a cor do Input e do texto inserido para #ffff
-            maxWidth: "100%",
-            display: "flex",
-            alignItems: "flex-end",
-            backgroundColor: "transparent",
-            color: "#ffff",
-          }}
-        >
-          <TextField
-            InputLabelProps={{ className: styles.textFieldColorImp }}
-            id="input-with-sx"
-            label="Email"
-            variant="standard"
-          />
-        </Box>
-      </Box>
-
-      {/* Input para senha */}
-      <Box sx={{ display: "flex", flexWrap: "wrap" }}>
-        <FormControl sx={{ m: 1, width: "25ch" }} variant="standard">
-          <InputLabel htmlFor="standard-adornment-password">
-            Senha
-          </InputLabel>
-          <Input
-            id="standard-adornment-password"
-            type={showPassword ? "text" : "password"}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
-                </IconButton>
-              </InputAdornment>
-            }
-          />
-        </FormControl>
-      </Box>
-      
       <StatusBar style="auto" />
+      <Text style={styles.wellcomeTxt}>Bem Vindo!</Text>
+      <Text style={styles.fraseWell}>Logue para continuar</Text>
+<br />
+<br />
+<br />
+<br />
+      <TextInput
+        mode="outlined"
+        label="Email"
+        // placeholder=""
+        // right={<TextInput.Affix text="/100" />}
+      />
+      <TextInput
+        mode="outlined"
+        label="Senha"
+        // placeholder=""
+        // right={<TextInput.Affix text="/100" />}
+      />
+      <br />
+      <br />
+      <br />
+      <br />
+      <Button
+        // icon="camera"
+        mode="contained"
+        onPress={() => console.log("Pressed")}
+      >
+        Entrar
+      </Button>
+      <br />
+      <Button
+        // icon="camera"
+        mode="contained"
+        onPress={() => console.log("Pressed")}
+      >
+      Cadastrar
+      </Button>
     </View>
   );
-}
+};
+
+export default Wellcome;
 
 const styles = StyleSheet.create({
   container: {
@@ -86,7 +59,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: "80%",
   },
-  wellcome: {
+  wellcomeTxt: {
     color: "#AFFFFF",
     textAlign: "left",
     fontSize: 40,

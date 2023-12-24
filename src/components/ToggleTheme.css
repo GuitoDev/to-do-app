@@ -1,0 +1,15 @@
+:root {
+  --bgDark: #0d1f2d;
+  --txtOneDark: #ffffff;
+  --txtTwoDark: #afffff;
+  --btnOneDark: #0d6e6e;
+  --btnTwoDark: #1d2e3d;
+}
+
+:root {
+  --bgLight: #FFFEFB;
+  --txtOneLight: #3B3C3D;
+  --btnOneLight: #00668C;
+  --btnTwoLight: #71C4EF;
+  --cardLightPass: #E0E0E0;
+}
